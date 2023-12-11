@@ -1,7 +1,10 @@
 public class Main {
     public static void main(String[] args) {
-        User user = new User("The Real Slim Shady");
-        user.sayHello();
+        TaxCalculator calculator = getTaxCalulator();
+        calculator.calculateTax();
+    }
 
+    public static TaxCalculator getTaxCalulator(){
+        return new TaxCalculator2022();
     }
 }
