@@ -1,28 +1,18 @@
 package state;
 
 public class Canvas {
-    private Tooltype currentTool;
+    private Tool currentTool;
     public void mouseDown(){
-        if(currentTool==Tooltype.SELECTION)
-            System.out.println("Selection Icon");
-        else if(currentTool==Tooltype.BRUSH)
-            System.out.println("Brush Icon");
-        else if(currentTool==Tooltype.ERASER)
-            System.out.println("Eraser Icon");
+        currentTool.mouseDown();
     }
     public void mouseUp(){
-        if(currentTool==Tooltype.SELECTION)
-            System.out.println("Draw Dashed Rectangle");
-        else if(currentTool==Tooltype.BRUSH)
-            System.out.println("Draw a Line");
-        else if(currentTool==Tooltype.ERASER)
-            System.out.println("Eraser Smth");
+        currentTool.mouseUp();
     }
 
-    public Tooltype setCurrentTool() {
+    public Tool getCurrentTool() {
         return this.currentTool;
     }
-    public void setCurrentTool(Tooltype currentTool) {
+    public void setCurrentTool(Tool currentTool) {
         this.currentTool = currentTool;
     }
 }
